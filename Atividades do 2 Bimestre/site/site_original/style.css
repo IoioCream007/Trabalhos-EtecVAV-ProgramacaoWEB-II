@@ -1,0 +1,227 @@
+* {
+    width: 100%;
+}
+
+body {
+    padding-top: 6.5rem;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    margin-top: 0.5rem;
+    background: #9265ff;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 6rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+    a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: clamp(14px, 2vw, 20px);
+    }
+    a:visited {
+        color: #ffffff;
+    }
+    a:hover {
+        color: blue;
+        text-decoration: none;
+    }
+}
+
+.space30 {
+    margin: auto;
+    margin-top: 0.5rem;
+    width: 30%;
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.space50 {
+    margin: auto;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.space70 {
+    margin: auto;
+    margin-bottom: 0.5rem;
+    height: 6rem;
+    width: 70%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.space90 {
+    margin: auto;
+    width: 90%;
+    text-align: justify;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    margin: auto;
+}
+
+.direct-col {
+    flex-direction: column;
+}
+
+.direct-row {
+    flex-direction: row;
+}
+
+.align-col {
+    align-items: center;
+}
+
+div{
+    display: flex;
+    align-items: center;
+}
+.card {
+    background-color: #9265ff;
+    width: 15rem;
+    height: 18rem;
+    padding: 20px;
+    border-radius: 8%;
+    color: white;
+    transition: 0.3s;
+    a {
+        color: #ffffff;
+        text-decoration: none;
+    }
+    a:visited {
+        color: #ffffff;
+    }
+    a:hover {
+        color: blue;
+        text-decoration: none;
+    }
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.quadro {
+    width: 80%;
+    height: 90%;
+    background: #9265ff;
+    border-radius: 8%;
+    display: flex;
+    margin-top: 4rem;
+    transition: 0.3s;
+    justify-content: center;
+    align-items: center; 
+    text-align: center;
+    color: #ffffff;
+    img {
+        width: 80%;
+            margin-bottom: 1rem;
+    }
+    a {
+        color: #ffffff;
+        text-decoration: none;
+    }
+    a:visited {
+        color: #ffffff;
+    }
+    a:hover {
+        color: blue;
+        text-decoration: none;
+    }
+}
+
+.quadro:hover {
+    transform: scale(1.03);
+}
+
+.justevenly {
+    justify-content: space-evenly;
+}
+
+.title {
+    width: 100%;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    img {
+        width: 8%;
+    }
+}
+
+.tutocom {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    img {
+        width: 100%;
+    }
+}
+
+.imgtutorial{
+    img{
+        width: 60%;
+    }
+}
+
+hr {
+    width: 100%;
+    padding-top: 0.25rem;
+    background: #9265ff;
+}
+
+.imagem {
+    margin: auto;
+    margin-bottom: 5rem;
+    margin-top: 2rem;
+}
+
+.end {
+    hr {
+        width: 100%;
+        background: #9265ff;
+        padding-top: 3rem;
+        bottom: 0;
+    }
+}
+
+.imgbio {
+    img{
+        width: 35%;
+        border-radius: 8%;
+    }
+}
+
+.marbot {
+    margin-bottom: 9rem;
+}
+
+.historia {
+    background: #F2F0EF;
+    width: 40%;
+    margin-left: 5rem;
+    border-radius: 8%;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.5);
+    h5{
+        margin-left: 1.5rem;
+    }
+    margin-bottom: 7rem;
+}
+
+.padbot {
+    padding-bottom: 2rem;
+}
