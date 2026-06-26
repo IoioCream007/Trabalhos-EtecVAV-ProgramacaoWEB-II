@@ -21,6 +21,8 @@
 #### Alguma que não chame muito a atenção mas mantenha uma estética confortável/amigável.
 -
 ## Foto da Logo
+<img width="1310" height="478" alt="logo_rt" src="https://github.com/user-attachments/assets/c8015b8b-8b50-491f-acdd-4dd66c6e4fe8" />
+
 -
 ## Dados Fictícios da empresa:
 ### Nome: Rubik's Tutorial
