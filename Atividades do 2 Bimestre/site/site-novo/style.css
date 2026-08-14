@@ -1,0 +1,651 @@
+/* ============================================================
+   RUBIK'S TUTORIAL - FOLHA DE ESTILOS
+   ============================================================
+   ÍNDICE
+   1. Reset e configurações globais
+   2. Variáveis (cores e fontes)
+   3. Tipografia base
+   4. Utilitários de layout (larguras, direção flex)
+   5. Header e navegação
+   6. Botões e campos de formulário
+   7. Seção de login / cadastro (index e login)
+   8. Títulos de seção
+   9. Cards (tutoriais e loja)
+   10. Página de tutorial detalhado (pyraminx)
+   11. Responsivo - Tablet (até 1024px)
+   12. Responsivo - Mobile (até 768px)
+   13. Responsivo - Mobile pequeno (até 480px)
+   ============================================================ */
+
+
+/* 1. RESET E CONFIGURAÇÕES GLOBAIS -------------------------- */
+
+* {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* 2. VARIÁVEIS ------------------------------------------------ */
+
+:root {
+    --cor-primaria: slateblue;
+    --cor-destaque: lightskyblue;
+    --cor-texto-claro: #ffffff;
+    --cor-texto-escuro: #000000;
+    --cor-fundo-escuro: rgba(0, 0, 0, 0.85);
+    --fonte-titulo: "Press Start 2P", system-ui;
+}
+
+
+/* 3. TIPOGRAFIA BASE ------------------------------------------ */
+
+body {
+    font-family: var(--fonte-titulo);
+}
+
+h1 {
+    font-family: var(--fonte-titulo);
+    font-size: clamp(0.5rem, 5vw, 1rem);
+    transition: font-size 0.2s ease;
+}
+
+a {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-texto-escuro);
+    text-decoration: none;
+    transition: font-size 0.2s ease;
+}
+
+a:visited {
+    color: var(--cor-texto-escuro);
+}
+
+a:hover {
+    color: var(--cor-texto-escuro);
+    background-color: var(--cor-destaque);
+    text-decoration: none;
+}
+
+hr {
+    width: 100%;
+    height: 0.5rem;
+    background-color: var(--cor-primaria);
+    border: none;
+    margin-bottom: 1rem;
+}
+
+.destaque {
+    color: red;
+}
+
+
+/* 4. UTILITÁRIOS DE LAYOUT -------------------------------------- */
+
+.space35 { width: 35%; }
+.space40 { width: 40%; }
+.space60 { width: 60%; }
+.space65 { width: 65%; }
+
+.altura35 { height: 35%; }
+.altura65 { height: 65%; }
+
+.direct-row { flex-direction: row; }
+.direct-col { flex-direction: column; }
+
+.align-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    padding-bottom: 3rem;
+}
+
+.justeven {
+    justify-content: space-evenly;
+}
+
+
+/* 5. HEADER E NAVEGAÇÃO ------------------------------------------ */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #ffffff;
+    display: flow-root;
+}
+
+nav {
+    display: flex;
+    margin: 0.5rem;
+    background-color: var(--cor-primaria);
+    height: 6rem;
+    border-radius: 1rem;
+    align-items: center;
+}
+
+.logo-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-img img {
+    width: clamp(10rem, 15vw, 15rem);
+    transition: 0.3s;
+}
+
+.logo-img img:hover {
+    width: 60%;
+}
+
+nav ul {
+    padding-right: 5%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+}
+
+nav li {
+    padding: 5px;
+    display: inline-block;
+    align-items: center;
+}
+
+nav li h1 {
+    height: auto;
+    min-height: 3rem;
+    width: auto;
+    min-width: 7rem;
+    background-color: var(--cor-texto-claro);
+    padding: 0.5rem 0.75rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+nav li a {
+    height: auto;
+    min-height: 3rem;
+    width: auto;
+    min-width: 7rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cor-texto-claro);
+    color: var(--cor-texto-escuro);
+    padding: 0.5rem 0.75rem;
+    white-space: nowrap;
+}
+
+nav li a:hover {
+    font-size: clamp(0.75rem, 1.4vw, 1.05rem);
+}
+
+/* Dropdown de idioma */
+.dropdown:hover h1 {
+    background-color: var(--cor-destaque);
+    font-size: clamp(0.75rem, 1.4vw, 1.05rem);
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    box-shadow: 0 0 2px black;
+    z-index: 10;
+}
+
+.dropdown-menu button {
+    display: block;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.player2 {
+    font-family: var(--fonte-titulo);
+}
+
+.player2 a { font-size: 1.5vh; }
+.player2 h1 { font-size: 1.5vh; }
+.player2 h2 { font-size: 1rem; }
+
+.player2b {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-texto-claro);
+}
+
+.player2b a { font-size: 1.5vh; }
+.player2b h1 { font-size: 1.5vh; }
+.player2b h2 { font-size: 1.5rem; }
+
+
+/* 6. BOTÕES E CAMPOS DE FORMULÁRIO -------------------------------- */
+
+button {
+    min-width: 6rem;
+    height: auto;
+    padding: 0.4rem 0.8rem;
+    margin-bottom: 0.5rem;
+    font-family: var(--fonte-titulo);
+    font-size: clamp(0.5rem, 1.8vw, 0.7rem);
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    transition: font-size 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--cor-destaque);
+    font-size: clamp(0.6rem, 2.2vw, 0.85rem);
+}
+
+.button-login {
+    width: fit-content;
+    min-width: 10rem;
+    max-width: 100%;
+    height: auto;
+    min-height: 2.75rem;
+    padding: 0.6rem 1.5rem;
+    font-size: clamp(0.6rem, 2.2vw, 0.85rem);
+}
+
+/* O link que envolve o botão de login não deve ter caixa própria,
+   senão sua área de hover fica maior/quadrada por baixo do botão */
+.quadro-login a {
+    display: contents;
+}
+
+input {
+    font-family: var(--fonte-titulo);
+    height: 25%;
+    width: 70%;
+    font-size: 1.5vh;
+}
+
+
+/* 7. SEÇÃO DE LOGIN / CADASTRO ------------------------------------- */
+
+.sec1 {
+    display: flex;
+    min-height: calc(100vh - 7rem);
+    align-items: center;
+    justify-content: center;
+}
+
+.quadro {
+    display: flex;
+    position: relative;
+    margin: auto;
+    width: 99%;
+    height: 70vh;
+    background-color: var(--cor-primaria);
+    border-radius: 1rem;
+}
+
+.textquadro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.textquadro h1 {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 80%;
+    width: 90%;
+    background-color: var(--cor-texto-claro);
+    padding: 1.5rem;
+    border-radius: 1rem;
+}
+
+.quadro-login {
+    padding: 1.5rem;
+    width: 85%;
+    height: 58%;
+    position: absolute;
+    color: var(--cor-texto-claro);
+    background-color: var(--cor-fundo-escuro);
+    left: 50%;
+    bottom: 4%;
+    transform: translateX(-50%);
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.quadro-login h1 {
+    font-size: 1.5vh;
+}
+
+
+/* 8. TÍTULOS DE SEÇÃO ------------------------------------------------ */
+
+.title {
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.title h1 { font-size: 3rem; }
+.title h2 { font-size: 3rem; }
+
+
+/* 9. CARDS (TUTORIAIS E LOJA) ----------------------------------------- */
+
+.card {
+    text-align: center;
+    width: 20%;
+    background-color: var(--cor-primaria);
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.card img {
+    width: 75%;
+    margin: 0 auto;
+    padding-bottom: 1rem;
+}
+
+.card h2 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+
+/* 10. PÁGINA DE TUTORIAL DETALHADO (PYRAMINX) -------------------------- */
+
+.imgpyra img {
+    width: 60%;
+    margin: 0 auto;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.padtop {
+    padding-top: 5rem;
+}
+
+.text {
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    text-align: justify;
+    font-size: 1rem;
+}
+
+.imgtuto img {
+    margin: 0 auto;
+}
+
+.img20 img {
+    width: 20%;
+}
+
+.img50 img {
+    width: 50%;
+}
+
+
+/* ============================================================
+   RESPONSIVIDADE
+   ============================================================ */
+
+/* 11. TABLET (até 1024px) -------------------------------------------- */
+
+@media (max-width: 1024px) {
+
+    .card {
+        width: 28%;
+    }
+
+    .img50 img {
+        width: 65%;
+    }
+
+    .img20 img {
+        width: 25%;
+    }
+
+    .imgpyra img {
+        width: 75%;
+    }
+}
+
+
+/* 12. MOBILE (até 768px) --------------------------------------------- */
+
+@media (max-width: 768px) {
+
+    nav {
+        height: 4.5rem;
+        padding: 0 0.5rem;
+    }
+
+    nav .space35 { width: 60%; }
+    nav .space65 { width: 40%; }
+
+    .logo-img img {
+        width: clamp(8rem, 40vw, 12rem);
+    }
+
+    nav ul {
+        padding-right: 0;
+        gap: 0.3rem;
+        flex-wrap: wrap;
+        row-gap: 0.4rem;
+    }
+
+    nav li {
+        padding: 3px;
+    }
+
+    nav li a,
+    nav li h1 {
+        width: auto;
+        min-width: 4.2rem;
+        height: auto;
+        min-height: 2.2rem;
+        padding: 0.35rem 0.5rem;
+        font-size: clamp(0.42rem, 2.6vw, 0.6rem);
+        white-space: nowrap;
+    }
+
+    .dropdown-menu button {
+        width: auto;
+        min-width: 6rem;
+        font-size: clamp(0.4rem, 2.4vw, 0.55rem);
+        padding: 0.3rem 0.5rem;
+    }
+
+    /* Quadro de login/cadastro empilhado */
+    .quadro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 95%;
+        min-height: 70vh;
+        height: auto;
+        gap: 6.5rem;
+        padding: 1rem;
+    }
+
+    .textquadro {
+        width: 100%;
+    }
+
+    .textquadro h1 {
+        width: 100%;
+        height: auto;
+        font-size: 1rem;
+        line-height: 1.6;
+        text-align: center;
+    }
+
+    .quadro-login {
+        position: static;
+        transform: none;
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        padding: 1.2rem;
+    }
+
+    .quadro-login h1 {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    /* Cards em duas colunas */
+    .container.justeven {
+        flex-wrap: wrap;
+        row-gap: 1.5rem;
+    }
+
+    .card {
+        width: 38%;
+    }
+
+    .card img {
+        width: 75%;
+    }
+
+    /* Margem lateral para o conteúdo do tutorial não colar nas bordas */
+    .imgpyra {
+        padding: 0 1rem;
+    }
+
+    /* Imagens do tutorial maiores e legíveis, exceto o ícone (img20) */
+    .imgpyra img {
+        width: 85%;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .img50 img {
+        width: 85%;
+    }
+
+    /* passoumpyra funciona como ícone, deve continuar pequeno no mobile */
+    .img20 img {
+        width: 32%;
+    }
+
+    .imgtuto .space65 {
+        width: 100%;
+    }
+
+    .text {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+        font-size: 0.85rem;
+    }
+
+    .padtop {
+        padding-top: 3rem;
+    }
+
+    .title h1,
+    .title h2 {
+        font-size: 1.8rem;
+    }
+}
+
+
+/* 13. MOBILE PEQUENO (até 480px) --------------------------------------- */
+
+@media (max-width: 480px) {
+
+    nav {
+        height: auto;
+        flex-direction: column;
+        padding: 0.5rem;
+        gap: 0.5rem;
+    }
+
+    nav .space35,
+    nav .space65 {
+        width: 100%;
+    }
+
+    .logo-img img {
+        width: clamp(10rem, 70vw, 14rem);
+    }
+
+    nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+    }
+
+    nav li a,
+    nav li h1 {
+        min-width: 3.6rem;
+        font-size: clamp(0.4rem, 3vw, 0.55rem);
+    }
+
+    .textquadro h1 {
+        font-size: 0.7rem;
+    }
+
+    /* Um card por linha, um pouco menor para não ocupar a tela toda */
+    .card {
+        width: 62%;
+    }
+
+    .quadro-login {
+        padding: 1rem;
+    }
+
+    /* Margem lateral um pouco menor, mas ainda com respiro das bordas */
+    .imgpyra {
+        padding: 0 0.75rem;
+    }
+
+    .img50 img,
+    .imgpyra img {
+        width: 92%;
+    }
+
+    /* passoumpyra continua pequeno, como um ícone, mesmo na tela mais estreita */
+    .img20 img {
+        width: 40%;
+    }
+
+    .text {
+        padding-left: 0.6rem;
+        padding-right: 0.6rem;
+        font-size: 0.8rem;
+    }
+
+    .title h1,
+    .title h2 {
+        font-size: 1.3rem;
+    }
+}
